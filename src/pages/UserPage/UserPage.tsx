@@ -8,6 +8,7 @@ const UserPage: React.FunctionComponent<UserPageProps> = () => {
   const gitData: any = useSelector(
     (state: RootState) => state.addGitData.gitData
   );
+  
   const params = useParams();
   const userPage = gitData.find((id:any) => id === Number(params.id));
   return (

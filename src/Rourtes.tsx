@@ -12,7 +12,7 @@ const AppRoutes: React.FunctionComponent<AppRoutesProps> = () => {
         <Routes>
             <Route path="*" element={<NotFound/>}></Route>
             <Route path="/" element={<Main/>}></Route>
-            <Route path="userpage/id" element={<UserPage/>}></Route>
+            <Route path="userpage/:id" element={<UserPage/>}></Route>
         </Routes>
         </BrowserRouter> );
 }
