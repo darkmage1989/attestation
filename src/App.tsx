@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AppRoutes from "./Rourtes";
+import { AppBox } from "./components/styles";
+import { createGlobalStyle } from "styled-components";
 
-function App() {
+interface AppProps {}
+
+const App: React.FunctionComponent<AppProps> = () => {
+  const GlobalStyle = createGlobalStyle`
+  body {
+    padding:0;
+    margin:0;
+    background-color:gray;
+  }
+`;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppBox>
+      <GlobalStyle/>
+      <AppRoutes />
+    </AppBox>
   );
-}
+};
 
 export default App;
