@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Ascending from "./AscendingButton/AscendingButton";
-import Descending from "./Descending/DescendingButton";
+import Ascending from "../AscendingButton/AscendingButton";
+import Descending from "../Descending/DescendingButton";
 interface FilterDataProps {}
 
 const FilterData: React.FunctionComponent<FilterDataProps> = () => {

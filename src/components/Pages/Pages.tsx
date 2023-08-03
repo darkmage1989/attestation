@@ -1,10 +1,11 @@
-import { createPages } from "../units/pagesCreator";
+import { createPages } from "../../units/pagesCreator";
 import React from "react";
+import { PagesButtonBox, ButtonsPages } from "./styles";
 interface PagesProps {
   pages: Array<number>;
   pagesCount: number;
   currentPage: number;
-  togglePage: (pages:number) => void;
+  togglePage: (pages: number) => void;
 }
 const Pages: React.FunctionComponent<PagesProps> = ({
   pages,
@@ -14,13 +15,13 @@ const Pages: React.FunctionComponent<PagesProps> = ({
 }) => {
   createPages(pages, pagesCount, currentPage);
   return (
-    <div className="pages">
+    <PagesButtonBox>
       {pages.map((page, index) => (
-        <button onClick={() => togglePage(page)} key={index}>
+        <ButtonsPages onClick={() => togglePage(page)} key={index}>
           {page}
-        </button>
+        </ButtonsPages>
       ))}
-    </div>
+    </PagesButtonBox>
   );
 };
 

@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
 import { addGitData } from "../../services/slices/gitDataSlice";
+import { FilterButton } from "./styles";
 
 interface DescendingProps {
-  toggleButtons: (visible:boolean) => void;
+  toggleButtons: (visible: boolean) => void;
 }
 
 const Descending: React.FunctionComponent<DescendingProps> = ({
@@ -11,14 +12,14 @@ const Descending: React.FunctionComponent<DescendingProps> = ({
   const dispatch = useDispatch();
   return (
     <>
-      <button
+      <FilterButton
         onClick={() => {
           toggleButtons(true);
-          dispatch(addGitData({ order: 'desc' }));
+          dispatch(addGitData({ order: "desc" }));
         }}
       >
         Убыванию
-      </button>
+      </FilterButton>
     </>
   );
 };

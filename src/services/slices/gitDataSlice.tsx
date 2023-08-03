@@ -4,6 +4,7 @@ const gitDataSlice = createSlice({
   initialState: {
     order: "desc",
     userName: "q",
+    gitData: [],
   },
   reducers: {
     addGitData: (state, actions) => {
@@ -12,6 +13,9 @@ const gitDataSlice = createSlice({
       }
       if (actions.payload.userName) {
         state.userName = actions.payload.userName;
+      }
+      if (actions.payload.gitData) {
+        state.gitData = actions.payload.gitData;
       }
     },
   },

@@ -12,7 +12,7 @@ export const usersApi = createApi({
       query: (attrs) => {
         const { currentPage, order, userName } = attrs;
         return {
-          url: `search/users?q=${userName}&sort=repositories&order=${order}&per_page=48&page=${currentPage}`,
+          url: `search/users?q=${userName}&sort=repositories&order=${order}&per_page=21&page=${currentPage}`,
         };
       },
     }),

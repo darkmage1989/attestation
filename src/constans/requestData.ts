@@ -15,4 +15,5 @@ export interface Idata {
   repos_url: string;
   events_url: string;
   received_events_url: string;
+  score: string;
 }

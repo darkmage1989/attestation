@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addGitData } from "../../services/slices/gitDataSlice";
+import { FilterButton } from "./styles";
 
 interface AscendingProps {
   toggleButtons: (visible: boolean) => void;
@@ -11,14 +12,14 @@ const Ascending: React.FunctionComponent<AscendingProps> = ({
   const dispatch = useDispatch();
   return (
     <>
-      <button
+      <FilterButton
         onClick={() => {
           toggleButtons(false);
           dispatch(addGitData({ order: 'asc' }));
         }}
       >
         Возрастанию
-      </button>
+      </FilterButton>
     </>
   );
 };
