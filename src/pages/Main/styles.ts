@@ -1,9 +1,9 @@
 import styled from "styled-components";
 export const LoaderBox = styled.div`
-  margin-top: 170px;
+  margin-top: 130px;
 `;
 export const SearchBox = styled.div`
-  margin-top: 100px;
+  margin-top: 40px;
   display: flex;
   align-items: center;
   gap: 30px;

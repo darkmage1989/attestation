@@ -4,7 +4,10 @@ export const PagesButtonBox = styled.div`
   display: flex;
   gap: 25px;
 `;
-export const ButtonsPages = styled.button`
+interface StylesProps {
+  readonly $isActive: boolean
+}
+export const ButtonsPages = styled.button<StylesProps>`
   font-size: 20px;
   text-decoration: none;
   height: 30px;
@@ -12,7 +15,7 @@ export const ButtonsPages = styled.button`
   color: #6b5770;
   background-image: linear-gradient(90deg, #fd7f34, #bd155b);
   display: inline-block;
-  border: 1px solid;
+  border: 2px solid black;
   position: relative;
   z-index: 0;
   border-radius: 100%;
@@ -33,7 +36,7 @@ export const ButtonsPages = styled.button`
     top: -2px;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    background: linear-gradient(90deg, #fd7f34, #bd155b);
+    background: linear-gradient(90deg, ${(props) => (props.$isActive ? "#1E90FF" : "#fd7f34")}, ${(props) => (props.$isActive ? "#1E90FF" : "#bd155b")}); 
     z-index: -2;
     transition: 0.4s;
     border-radius: 5px;

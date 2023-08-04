@@ -9,7 +9,6 @@ export function createPages( //функция для отрисовки кноп
         if (pages.length < 10) {
           pages.push(i);
         }
-        console.log(pages);
         if (i === pagesCount) break;
       }
     } else {

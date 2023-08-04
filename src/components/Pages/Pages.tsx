@@ -14,10 +14,11 @@ const Pages: React.FunctionComponent<PagesProps> = ({
   togglePage,
 }) => {
   createPages(pages, pagesCount, currentPage); // функция получает параметры
+  console.log(currentPage); 
   return ( // рисуем кнопки
     <PagesButtonBox>
       {pages.map((page, index) => (
-        <ButtonsPages  onClick={() => togglePage(page)} key={index}> 
+        <ButtonsPages $isActive={page===currentPage?true:false} onClick={() => togglePage(page)} key={index}> 
           {page}
         </ButtonsPages>
       ))}

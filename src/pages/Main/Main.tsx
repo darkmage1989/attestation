@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { LoaderBox } from "./styles"
 import { addGitData } from "../../services/slices/gitDataSlice";
+import Logo from "../../components/Logo/Logo";
 interface MainProps {}
 const Main: React.FunctionComponent<MainProps> = () => { // главная странциа
   const [currentPage, setCurrentPage] = useState(1); //Состояние для определения текущей страницы
@@ -41,6 +42,7 @@ const Main: React.FunctionComponent<MainProps> = () => { // главная ст�
         "error" in error ? error.error : JSON.stringify(error.data);
       return (
         <ErrorBox>
+          <Logo/>
           <div>An error has occurred:</div>
           <div>{message}</div>
         </ErrorBox>
@@ -60,7 +62,7 @@ const Main: React.FunctionComponent<MainProps> = () => { // главная ст�
   const togglePage = (currentPage: number): void => setCurrentPage(currentPage);
   dispatch(addGitData({ gitData: gitData })); //отправляю данные в слайс
   return (
-    <>
+    <><Logo/>
       <SearchBox>
         <FilterData />
         <Search />
