@@ -17,7 +17,7 @@ const Pages: React.FunctionComponent<PagesProps> = ({
   return (
     <PagesButtonBox>
       {pages.map((page, index) => (
-        <ButtonsPages onClick={() => togglePage(page)} key={index}>
+        <ButtonsPages  onClick={() => togglePage(page)} key={index}>
           {page}
         </ButtonsPages>
       ))}
