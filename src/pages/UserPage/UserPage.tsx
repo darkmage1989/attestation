@@ -12,7 +12,10 @@ const UserPage: React.FunctionComponent<UserPageProps> = () => {
 const navigate=useNavigate()
   const params = useParams();
   const userPage = gitData.find((user: any) => user.id === Number(params.id));
-  console.log(gitData);
+  if (!gitData) {
+    navigate('/')
+  }
+
   return (
     <DynamicPageBox>
       <DynamicPageSpan>Пользователь: {userPage.login}</DynamicPageSpan>
