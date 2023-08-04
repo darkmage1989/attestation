@@ -1,6 +1,6 @@
 # Добрый день, это моя атестационная работа.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Работа написана на typescript, в ней используются React, React-redux, React Router версии 6 и их возможности, в частности dynamic routes, redux-toolkit. Запрос осуществяется через RTK query.
 
 ## Available Scripts
 
