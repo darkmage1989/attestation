@@ -5,7 +5,7 @@ import { DynamicPageBox, DynamicPageButton, DynamicPageLink, DynamicPageSpan } f
 
 interface UserPageProps {}
 
-const UserPage: React.FunctionComponent<UserPageProps> = () => {
+const UserPage: React.FunctionComponent<UserPageProps> = () => { // странице для отрисовки данных пользователя через динамический роут
   const gitData: any = useSelector(
     (state: RootState) => state.addGitData.gitData
   );

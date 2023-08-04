@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 interface SearchProps {}
 const Search: React.FunctionComponent<SearchProps> = () => {
   const dispatch = useDispatch();
-  const [inputValue, setInputValue] = useState("");
-  const getInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const [inputValue, setInputValue] = useState(""); //стейт для значения инпута, если нельзя рефы, значит нельзя рефы)
+  const getInputValue = (event: React.ChangeEvent<HTMLInputElement>) => { // тут происходит поиск по имени юзера
     let value = event.target.value;
     if (value === "") {
       value = 'q';
@@ -22,7 +22,7 @@ const Search: React.FunctionComponent<SearchProps> = () => {
       />
       <SearchButton
         onClick={() => {
-          dispatch(addGitData({ userName: inputValue }));
+          dispatch(addGitData({ userName: inputValue })); //имя юзера в слайс
         }}
       >
         искать

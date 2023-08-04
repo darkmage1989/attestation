@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-export const usersApi = createApi({
+export const usersApi = createApi({ //ртк запрос на апи
   reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.github.com/",
@@ -7,7 +7,7 @@ export const usersApi = createApi({
   endpoints: (builder) => ({
     getUsersApi: builder.query<
       any,
-      { currentPage: number; order: string; userName: string }
+      { currentPage: number; order: string; userName: string } 
     >({
       query: (attrs) => {
         const { currentPage, order, userName } = attrs;

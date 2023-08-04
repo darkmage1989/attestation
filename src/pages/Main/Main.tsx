@@ -11,17 +11,17 @@ import { RootState } from "../../store/store";
 import { LoaderBox } from "./styles"
 import { addGitData } from "../../services/slices/gitDataSlice";
 interface MainProps {}
-const Main: React.FunctionComponent<MainProps> = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const order = useSelector((state: RootState) => state.addGitData.order);
-  const userName = useSelector((state: RootState) => state.addGitData.userName);
-  const { data, error, isLoading } = useGetUsersApiQuery({
-    currentPage,
+const Main: React.FunctionComponent<MainProps> = () => { // главная странциа
+  const [currentPage, setCurrentPage] = useState(1); //Состояние для определения текущей страницы
+  const order = useSelector((state: RootState) => state.addGitData.order); // получаю из стейта данные для запроса 
+  const userName = useSelector((state: RootState) => state.addGitData.userName); // получаю из стейта данные для запроса 
+  const { data, error, isLoading } = useGetUsersApiQuery({ // получаю данные из запроса 
+    currentPage, // передаю параметры в запрос
     order,
     userName,
   });
   const dispatch = useDispatch()
-  const isEmptyList = !isLoading && !data;
+  const isEmptyList = !isLoading && !data; // обработка загрузки
   if (isLoading) {
     return (
       <LoaderBox>
@@ -35,7 +35,7 @@ const Main: React.FunctionComponent<MainProps> = () => {
     );
   }
 
-  if (error) {
+  if (error) { // обработка ошибки
     if ("status" in error) {
       const message =
         "error" in error ? error.error : JSON.stringify(error.data);
@@ -49,16 +49,16 @@ const Main: React.FunctionComponent<MainProps> = () => {
       return <div>{error.message}</div>;
     }
   }
-  if (isEmptyList) {
+  if (isEmptyList) { //обработка пустого списка 
     return <p>No users</p>;
   }
-  const gitData = data.items;
-  const pagesCount: number = Math.ceil(
+  const gitData = data.items; // массив юзеров
+  const pagesCount: number = Math.ceil( // количество страниц
     ((data.total_count as number) / data.items.length) as number
   );
-  const pages: Array<number> = [];
+  const pages: Array<number> = []; // массив для отработки функции по созданию кнопок
   const togglePage = (currentPage: number): void => setCurrentPage(currentPage);
-  dispatch(addGitData({ gitData: gitData }));
+  dispatch(addGitData({ gitData: gitData })); //отправляю данные в слайс
   return (
     <>
       <SearchBox>

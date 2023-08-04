@@ -3,7 +3,7 @@ import Ascending from "../AscendingButton/AscendingButton";
 import Descending from "../Descending/DescendingButton";
 interface FilterDataProps {}
 
-const FilterData: React.FunctionComponent<FilterDataProps> = () => {
+const FilterData: React.FunctionComponent<FilterDataProps> = () => { //меняю кнопки в зависимости от состояния
   const [visibleButton, setVisibleButton] = useState(true);
   const toggleButtons = (visible: boolean): void => setVisibleButton(visible);
   return (

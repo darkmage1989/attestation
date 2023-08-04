@@ -6,7 +6,7 @@ interface AscendingProps {
   toggleButtons: (visible: boolean) => void;
 }
 
-const Ascending: React.FunctionComponent<AscendingProps> = ({
+const Ascending: React.FunctionComponent<AscendingProps> = ({ //компонент кнопки возрастания
   toggleButtons,
 }) => {
   const dispatch = useDispatch();
@@ -14,8 +14,8 @@ const Ascending: React.FunctionComponent<AscendingProps> = ({
     <>
       <FilterButton
         onClick={() => {
-          toggleButtons(false);
-          dispatch(addGitData({ order: 'asc' }));
+          toggleButtons(false); //прокидываю состояние 
+          dispatch(addGitData({ order: 'asc' })); //отправляю в слайс
         }}
       >
         Возрастанию

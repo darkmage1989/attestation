@@ -13,11 +13,11 @@ const Pages: React.FunctionComponent<PagesProps> = ({
   currentPage,
   togglePage,
 }) => {
-  createPages(pages, pagesCount, currentPage);
-  return (
+  createPages(pages, pagesCount, currentPage); // функция получает параметры
+  return ( // рисуем кнопки
     <PagesButtonBox>
       {pages.map((page, index) => (
-        <ButtonsPages  onClick={() => togglePage(page)} key={index}>
+        <ButtonsPages  onClick={() => togglePage(page)} key={index}> 
           {page}
         </ButtonsPages>
       ))}

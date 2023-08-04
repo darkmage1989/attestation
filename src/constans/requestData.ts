@@ -1,4 +1,4 @@
-export interface Idata {
+export interface Idata { //Файл с типизацией объектов
   login: string;
   id: string;
   node_id: string;

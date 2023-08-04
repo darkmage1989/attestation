@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { Idata } from "../../constans/requestData";
 import { UserBox, UsersContainer, Avatar, UserName } from "./styles";
 interface UserProps {
-  data: Array<Idata>;
+  data: Array<Idata>; //типизация пропса
 }
 
 const User: React.FunctionComponent<UserProps> = ({ data }) => {
-  return (
+  return ( //отрисовка юзеров
     <UsersContainer>
       {data.map((userData) => (
         <UserBox key={userData.id}>

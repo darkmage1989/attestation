@@ -6,7 +6,7 @@ interface DescendingProps {
   toggleButtons: (visible: boolean) => void;
 }
 
-const Descending: React.FunctionComponent<DescendingProps> = ({
+const Descending: React.FunctionComponent<DescendingProps> = ({ //компонент кнопки убывания
   toggleButtons,
 }) => {
   const dispatch = useDispatch();
@@ -14,8 +14,8 @@ const Descending: React.FunctionComponent<DescendingProps> = ({
     <>
       <FilterButton
         onClick={() => {
-          toggleButtons(true);
-          dispatch(addGitData({ order: "desc" }));
+          toggleButtons(true); //прокидываю состояние 
+          dispatch(addGitData({ order: "desc" })); //отправляю в слайс
         }}
       >
         Убыванию

@@ -1,4 +1,4 @@
-export function createPages(
+export function createPages( //функция для отрисовки кнопок под переключение страниц
   pages: Array<number>,
   pagesCount: number,
   currentPage: number
