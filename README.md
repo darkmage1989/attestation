@@ -1,6 +1,6 @@
 # Добрый день, это моя атестационная работа.
 
-Работа написана на typescript, в ней используются React, React-redux, React Router версии 6 и их возможности, в частности dynamic routes, redux-toolkit. Запрос осуществяется через RTK query.
+Работа написана на typescript, в ней используются React, React-redux, React Router версии 6, styled components и их возможности, в частности dynamic routes, redux-toolkit. Запрос осуществяется через RTK query.
 
 ## Available Scripts
 
@@ -39,8 +39,4 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Отображение страницы пользователя, происходит через переход на динамическую страницу. Есть страница 404 для отработки ошибки перехода через адресную строку. Как главная используется страница main.
