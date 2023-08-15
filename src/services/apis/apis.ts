@@ -9,8 +9,7 @@ export const usersApi = createApi({ //ртк запрос на апи
       any,
       { currentPage: number; order: string; userName: string } 
     >({
-      query: (attrs) => {
-        const { currentPage, order, userName } = attrs;
+      query: ({currentPage, order, userName}) => {
         return {
           url: `search/users?q=${userName}&sort=repositories&order=${order}&per_page=21&page=${currentPage}`,
         };

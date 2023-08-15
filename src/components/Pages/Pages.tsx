@@ -7,18 +7,17 @@ interface PagesProps {
   currentPage: number;
   togglePage: (pages: number) => void;
 }
-const Pages: React.FunctionComponent<PagesProps> = ({
-  pages,
-  pagesCount,
-  currentPage,
-  togglePage,
-}) => {
+const Pages = ({ pages, pagesCount, currentPage, togglePage }: PagesProps) => {
   createPages(pages, pagesCount, currentPage); // функция получает параметры
-  console.log(currentPage); 
-  return ( // рисуем кнопки
+  return (
+    // рисуем кнопки
     <PagesButtonBox>
       {pages.map((page, index) => (
-        <ButtonsPages $isActive={page===currentPage?true:false} onClick={() => togglePage(page)} key={index}> 
+        <ButtonsPages
+          $isActive={page === currentPage ? true : false}
+          onClick={() => togglePage(page)}
+          key={index}
+        >
           {page}
         </ButtonsPages>
       ))}
@@ -26,4 +25,4 @@ const Pages: React.FunctionComponent<PagesProps> = ({
   );
 };
 
-export default Pages;
+export default Pages
